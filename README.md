@@ -4,5 +4,11 @@ A hair type classifier build using fastai and gradio framework. The classifier i
 You can find it here: https://kavyasree-hair-type.hf.space
 
 
+## Requirements
+* fastai
+* gradio
+
+
+
 
 
