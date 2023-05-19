@@ -16,7 +16,9 @@ Figuring out your hairtype is the first step in the hair care routine.
 
 ![Screenshot (3)](https://github.com/Kavya-sree/Hair-Type-Classifier/assets/27502670/94ca1a9e-749b-4748-828c-d2dce5b1ef36)
 
-![image](https://github.com/Kavya-sree/Hair-Type-Classifier/assets/27502670/398fd1ea-2816-421c-aea3-b2beb5716412)
+After uploading the image, you get the predicted hair type
+
+![Screenshot (4)](https://github.com/Kavya-sree/Hair-Type-Classifier/assets/27502670/dc9aba73-2d82-42c3-a30b-843c8909570f)
 
 
 
