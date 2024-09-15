@@ -3,6 +3,7 @@ A hair type classifier build using fastai and gradio framework. The classifier i
 
 You can find it here: https://kavyasree-hair-type.hf.space
 
+To collect image data you can follow along this article: https://machinelearningbrain.website/image-data-collection-for-deep-learning-projects/
 
 # About classifier
 The four main hair types are Straight, Wavy, Curly and Kinky. But in the classifier also identifies dreadlocks. Dreadlocks are not a hair type, but a hair style. Thus our Hair Type Classifier identifies 5 hair type
