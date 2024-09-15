@@ -1,23 +1,26 @@
 import gradio as gr
 from fastai.vision.all import *
 
-MODELS_PATH = Path('./models')
-EXAMPLES_PATH = Path('./examples')
+# Path to the saved model
+model_path = Path('models\hair-resnet18-model.pkl')
 
-    
-LEARN = load_learner(MODELS_PATH/'hair-resnet18-model.pkl')
-LABELS = LEARN.dls.vocab
+# Load the model
+learn = load_learner(model_path)
 
+# Function to make predictions
 def predict_hair(img):
-    #img = PILImage.create(img)
-    pred,pred_idx,probs = LEARN.predict(img)
-    return {LABELS[i]: float(probs[i]) for i in range(len(LABELS))}
+    pred, pred_idx, probs = learn.predict(img)
+    return {learn.dls.vocab[i]: float(probs[i]) for i in range(len(learn.dls.vocab))}
 
-demo = gr.Interface(fn=predict_hair,
-                    inputs=gr.inputs.Image(shape=(256,256)),
-                    outputs=gr.outputs.Label(num_top_classes=3),
-                    title="Hair Type Classifier",
-                    description="A hair type classifier to predict hair type: straight, wavy, curly, kinky and dreadlocks. Although dreadlocks are not hair type, we can still classify",
-                    examples= [f'{EXAMPLES_PATH}/{f.name}' for f in EXAMPLES_PATH.iterdir()],
-                    )
-demo.launch(enable_queue= True)
+# Create the Gradio interface
+demo = gr.Interface(
+    fn=predict_hair,
+    inputs=gr.Image(type="pil"),  # Removed 'shape' and replaced it with 'type="pil"'
+    outputs=gr.Label(num_top_classes=3),
+    title="Hair Type Classifier",
+    description="A classifier to predict hair type: curly, straight, wavy, kinky.",
+    examples=["examples/example1.jpg", "examples/example2.jpg"]
+)
+
+# Launch the app
+demo.launch(share=True)
