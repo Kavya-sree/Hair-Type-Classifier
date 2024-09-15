@@ -19,7 +19,7 @@ demo = gr.Interface(
     outputs=gr.Label(num_top_classes=3),
     title="Hair Type Classifier",
     description="A classifier to predict hair type: curly, straight, wavy, kinky.",
-    examples=["examples/example1.jpg", "examples/example2.jpg"]
+    examples=["examples/0a62ef878341056d842dbde6365f9c4a4.jpg", "examples/58baa8efdf105f1591f34dd7299538294.jpg"]
 )
 
 # Launch the app
