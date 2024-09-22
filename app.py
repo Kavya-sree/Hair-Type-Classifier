@@ -61,4 +61,4 @@ demo = gr.Interface(
 gr.Interface.analytics = False
 
 # Launch the app
-demo.launch()
+demo.launch(share=True)
